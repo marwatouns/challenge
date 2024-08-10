@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        function averageOfEvens(numbers) {
+                
+            const evens = numbers.filter(num => num % 2 === 0);
+                if(evens.length === 0) {
+                    return 0
+                }
+
+            const sumOfEvens = evens.reduce((sum, num) => sum + num, 0); 
+                const average = sumOfEvens / evens.length;
+                    return average;  
+
+        }
+
+        const numbers = [1, 2, 3, 4, 5, 6];
+        console.log(averageOfEvens(numbers));
+
+    </script>
+
+
+
+    <script>
+
+        function fruit(words) {
+        return words.reduce((longest, current) => {
+            return current.length > longest.length ? current : longest;
+            },  "");
+        }
+        
+        const words = ["apple", "banana", "grapefruit", "kiwi"];
+        console.log(fruit(words)); 
+
+
+    </script>
+
+
+
+    <script>
+
+        function averagePages(books) {
+        
+            const pages = books.map(book => book.pages);
+        
+            const totalPages = pages.reduce((sum, pageCount) => sum + pageCount, 0);
+        
+
+            const average = totalPages / pages.length;
+        
+             return average;
+        }
+
+        const books = [
+        { title: "Book A", author: "Author A", pages: 150 },
+        { title: "Book B", author: "Author B", pages: 200 },
+        { title: "Book C", author: "Author C", pages: 250 }
+        ];
+
+        console.log(averagePages(books)); 
+    </script>
+
+
+
+    <script>
+
+        function wld(x) {
+            return x.reduce((w, x) => {
+        
+            if (w[x]) {
+            w[x] += 1;
+            } else {
+            w[x] = 1;
+            }
+
+                return w;
+            }, {});
+        }
+
+
+        const input = ["hello", "world", "hello"];
+        console.log(wld(input)); 
+
+     </script>
+
+
+
+
+    <script>
+
+        function countPeopleByCity(people) {
+            return people.reduce((cityCounts, person) => {
+                
+                const city = person.city;
+
+                if (cityCounts[city]) {
+                    cityCounts[city] += 1;
+                } else {
+                
+                    cityCounts[city] = 1;
+                }
+
+                return cityCounts;
+            }, {}); 
+        }
+
+
+        const people = [
+            { name: "Alice", age: 30, city: "New York" },
+            { name: "Bob", age: 40, city: "Chicago" },
+            { name: "Charlie", age: 50, city: "New York" }
+        ];
+
+        console.log(countPeopleByCity(people));
+
+    </script>
+
+</body>
+</html>
